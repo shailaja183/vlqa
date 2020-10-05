@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>VLQA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="static/styles/index.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hk-grotesk" type="text/css"/>
+        <link rel="icon" href="static/images/favicon.png">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+        <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+         <!--   JS IMPORTS   -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js" integrity="sha256-iaqfO5ue0VbSGcEiQn+OeXxnxAMK2+QgHXIDA5bWtGI=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js" integrity="sha256-Gn7MUQono8LUxTfRA0WZzJgTua52Udm1Ifrk5421zkA=" crossorigin="anonymous"></script>
+    </head>
+      <style>
+        p.rank{
+          padding-left:30px;
+        }
+        body {
+          font-family: 'HankenGroteskRegular';
+          background-color:#E0E0E0;
+        }
+      </style>
+      <body>
+      <div class="header">
+          <h1><img src="static/images/qa4.png" width="10%">  VLQA (<u>V</u>isuo-<u>L</u>inguistic <u>Q</u>uestion <u>A</u>nswering)</h1>
+          <h3> A Dataset for Joint Reasoning over Visuo-Linguistic Context </h3> 
+      </div>
+      <div class="container">
+          <div class="row">
+            <div class="col-md-7 box ">
+              <h3>What is VLQA? </h3>
+              <p>VLQA is a dataset for joint reasoning over visuo-linguistic context. It consists of 9K image-passage-question-answers items with detailed annotations, which are meticulously crafted through combined automated and manual efforts. Questions in VLQA are designed to combine both visual and textual information, i.e. ignoring either of them would make the question unanswerable. Solving this dataset requires an AI model that can (i) understand diverse kinds of images; from simple daily-life scenes and standard charts to complex diagrams (ii) understand complex texts and relate it to given visual information (ii) perform a variety of reasoning tasks and derive inferences. </p>
+              <center>
+               <a href="https://arxiv.org/pdf/2005.00330.pdf" target="_blank"> <button class="button"> <i class="fa fa-newspaper-o" aria-hidden="true"></i> VLQA Paper (EMNLP'20 Findings)</button></a>
+              <hr>
+              <p>Browse examples from VLQA</p>
+                <a href="https://shailaja183.github.io/vlqa/explorer/dataset.html"><button class="button"> <i class="fa fa-eye" aria-hidden="true"></i> Explore VLQA Dataset</button></a>
+              <hr>
+                <p>For further details about VLQA dataset creation, annotations and dataset analysis please refer to the following document. </p>
+                <a href="https://arxiv.org/pdf/2005.00330.pdf" target="_blank"><button class="button"> <i class="fa fa-newspaper-o" aria-hidden="true"></i> Supplementary Material </button></a>
+              <hr>
+                <p>Download the VLQA dataset</p>
+                <a href="" download="train.json"><button class="button"><i class="fa  fa-download"></i> Download Training Set (xxx MB)</button></a>
+                <a href="" download="val.json"><button class="button"><i class="fa fa-download"></i> Download Validation Set (xxx MB)</button></a>
+                <a href="" download="images.zip"><button class="button"><i class="fa fa-download"></i> Download Images (xxx GB)</button></a>
+                <p> To preserve the integrity of the test results, we do not release the test set publicly. Submit your model as instructed below and we will test it for you. </p>
+              <hr>
+                <h3>Evaluation</h3>
+                <p>Code for baseline models used to report 
+                  results in our paper is available at following gitbub repository.
+                </p>
+                <a href="https://github.com/shailaja183/vlqa" target="_blank"><button class="button"><i class="fa fa-code" aria-hidden="true"></i> Code for Baseline Models </button></a>
+                <p>To evaluate your model, you need to use an evaluation script and a prediction file. 
+                  <br>
+                <a href="static/evaluate.py" download="evaluate.py"> <button class="button"><i class="fa fa-download"></i> Evaluation Script</button></a>
+                <a href="static/sample_predictions.json" download="sample_predictions.json"><button class="button"><i class="fa fa-download"></i> Sample Prediction File (Validation Set)</button></a>
+                <br>
+              Run the following command to print results for validation set; </p>
+                <code>python evaluate.py {path-to-prediction-file} {path-to-validation-set}</code>
+                
+              <hr>
+                <h3>Submission</h3>
+                <p>Once you are satisfied with your model performance on the validation set, use the following tutorial to submit it for an official evaluation on the test set.</p>
+                <a href="https://worksheets.codalab.org/worksheets/0x31e65ec372c4499b9b53b78e5551c6eb" target="_blank"><button class="button"> <i class="fa fa-paper-plane" aria-hidden="true"></i> Submission Tutorial</button></a>
+                </center>
+              <hr>
+                <h3>Distribution and Usage</h3>
+                <p>VLQA is curated from multiple online resources (books, encyclopedias, web-crawls, existing datasets, standardized tests etc.). We provide web reference to all such resources used in images, passages and question-answers pairs in our dataset (originally curated content might be altered on case-by-case basis to well fit the purpose of the dataset). Creation of VLQA is purely research oriented and so does its distribution and future usage. VLQA is an ongoing effort and we expect the dataset to evolve. If you find our dataset or model helpful, please cite our paper :-)
+                <h4>Citation:</h4>
+                <code>
+                  @misc{sampat2020visuo-linguistic,
+                  <br>
+    title={Visuo-Linguistic Question Answering (VLQA) Challenge},
+    <br>
+    author={Shailaja Sampat and Yezhou Yang and Chitta Baral},
+    <br>
+    year={2020},
+    <br>
+    eprint={2005.00330},
+    <br>
+    archivePrefix={arXiv},
+    <br>
+    primaryClass={cs.CV}
+    <br>
+  }
+                </code>
+                 </p> 
+              <hr>   
+                <h3>More Questions?</h3>
+                <p>Contact Shailaja Sampat at <a href="mailto:ssampa17@asu.edu"> ssampa17@asu.edu</a></p>
+              </div>
+              <div class="col-md-5 box">
+                <div id="container" style="width: 100%"></div>
+                  <script id="template" type="x-tmpl-mustache">
+                    <h3><i class="em em-trophy" aria-role="presentation" aria-label="TROPHY"></i> Top Models on VLQA-Test Set </h3>
+                    <br>
+                    <table class="table table-condensed">
+                      <thead>
+                        <tr>
+                          <th>Rank</th>
+                          <th>Model</th>
+                          <th>Accuracy</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th><span class="date label label-default">OCT 03, 20</span></th>
+                          <td>HUMAN </td>
+                          <td>84.00</td>
+                        </tr>
+
+                        <tr>
+                          <th><p class="rank">1</p><span class="date label label-default">OCT 03, 20</span></th>
+                          <td>HOLE (Multimodal)
+                          <br>  (Sampat et al., 2020)</td>
+                          <td>39.63</td>
+                        </tr>
+
+                         <tr>
+                          <th><p class="rank">2</p><span class="date label label-default">OCT 03, 20</span></th>
+                          <td>LXMERT (Multimodal) 
+                          <br>  (Tan and Bansal, 2019) </td>
+                          <td>36.41</td>
+                        </tr>
+                         <tr>
+                          <th><p class="rank">3</p><span class="date label label-default">OCT 03, 20</span></th>
+                          <td>VL-BERT (Multimodal)
+                          <br> (Su et al., 2019)</td>
+                          <td>35.92</td>
+                        </tr>
+                         <tr>
+                          <th><p class="rank">4</p><span class="date label label-default">OCT 03, 20</span></th>
+                          <td>ViLBERT (Multimodal)
+                          <br> (Lu et al., 2019)</td>
+                          <td>34.70</td>
+                        </tr>
+                         <tr>
+                          <th><p class="rank">5</p><span class="date label label-default">OCT 03, 20</span></th>
+                          <td>VisualBERT (Multimodal)
+                          <br> (Li et al., 2019)</td>
+                          <td>33.17</td>
+                        </tr>
+
+                         <tr>
+                          <th><p class="rank">6</p><span class="date label label-default">OCT 03, 20</span></th>
+                          <td>Random Choice Baseline
+                          <br> -- </td>
+                          <td>31.36</td>
+                        </tr>
+
+                        <tr>
+                          <th><p class="rank">7</p><span class="date label label-default">OCT 03, 20</span></th>
+                          <td>DQANet (Multimodal)
+                          <br> (Kembhavi et al., 2016) </td>
+                          <td>31.30</td>
+                        </tr>
+              
+                        <tr>
+                          <th><p class="rank">8</p><span class="date label label-default">OCT 03, 20</span></th>
+                          <td>Passage-only (Unimodal)
+                          <br> -- </td>
+                          <td>30.16</td>
+                        </tr>
+
+                        <tr>
+                          <th><p class="rank">9</p><span class="date label label-default">OCT 03, 20</span></th>
+                          <td>Image-only (Unimodal) <br> -- </td>
+                          <td>29.48</td>
+
+                        </tr> 
+
+                        <tr>
+                          <th><p class="rank">10</p><span class="date label label-default">OCT 03, 20</span></th>
+                          <td>Question-only (No modality) <br> -- </td>
+                          <td>28.56</td>
+                        </tr>
+                        
+                        {{#submissions}}
+                          <th><p class="rank">{{{rank}}}</p><span class="date label label-default">{{created}}</span></th>
+                          <td>{{submission.description}}</td>
+                          <td>{{scores.textual_cloze}}</td>
+                        </tr>
+                        {{/submissions}}
+                       </tbody>
+                      </table>
+                      
+                      </script>
+                  </div>
+                </div>
+              <div class="col-lg-12 col-sm-12">
+                <div class="col-lg-3 col-md-3 col-sm-3"><br>
+                  <img src="static/images/asu.jpeg" width=120%>
+                </div>
+              <div class="col-lg-8 col-md-8 col-sm-8"><br>
+                <center><h4> Shailaja Sampat <a href="http://shailaja-sampat.mystrikingly.com/" target="_blank"><i class="em em-female-student" aria-role="presentation" aria-label=""></i></a>, Yezhou Yang <a href="https://yezhouyang.engineering.asu.edu/research-group/" target="_blank"><i class="em em-male-teacher" aria-role="presentation" aria-label=""></i></a> and Chitta Baral <a href="https://cogintlab-asu.github.io" target="_blank"><i class="em em-male-teacher" aria-role="presentation" aria-label=""></i> </a> <br>
+                  School of Computing, Informatics, and Decision Systems Engineering (CIDSE) <br> Arizona State Univeristy </h4></center>
+              </div>   
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <p style="text-align:left"><h4><br>We are thankful to National Science Foundation (NSF) for supporting this research under grant IIS-1816039.</h4></p>
+                <br>
+                <h6>Webpage template inspired by <a href="https://rajpurkar.github.io/SQuAD-explorer/" target="_blank"> SQuAD</a> and <a href="https://hucvl.github.io/recipeqa/" target="_blank">RecipeQA</a> leaderboards.</h6>
+                <h6>Icon template adapted from <a href="https://www.flaticon.com/authors/freepik" >Freepik</a>.</h6>
+              </div>
+            </div>
+          </body>
+      </html>
+
+<script type="text/javascript">
+  (function($) {
+    var LEADERBOARD_JSON = 'https://hucvl.github.io/recipeqa/leaderboard.json';
+    var template = $('#template').html();
+    Mustache.parse(template);
+    var ms_data = { submissions:[], };
+    $.getJSON(LEADERBOARD_JSON).done(function (data) {
+        var rendered = Mustache.render(template, ms_data);
+        $('#container').html(rendered);
+          }).fail(function () {
+            $('#container').html('This leaderboard is not ready yet.');
+          });
+        })(jQuery);
+ </script>
