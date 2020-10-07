@@ -20,11 +20,10 @@ https://github.com/shailaja183/vlqa/baselines (coming soon)
 https://arxiv.org/pdf/2005.00330.pdf
 
 # Evaluating a Model:
-Download Evaluation Script and sample Prediction file 
+Download Evaluation Script and sample Prediction file; Then run following command to see the accuracy on Val set;
+python evaluate.py {path-to-prediction-file} {path-to-validation-set}
 Evaluation Script: https://shailaja183.github.io/vlqa/static/evaluate.py
 Sample Prediction file: https://shailaja183.github.io/vlqa/static/sample_predictions.json
-Then run following command to see the accuracy on Val set;
-python evaluate.py {path-to-prediction-file} {path-to-validation-set}
 
 # Submit your Model:
 Once you are satisfied with your model performance on the validation set, use the following tutorial to submit it for an official evaluation on the test set.
