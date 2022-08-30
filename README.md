@@ -10,10 +10,6 @@ https://shailaja183.github.io/vlqa/
 Train Set/Val Set/Test Set and Images
 https://drive.google.com/drive/folders/163Tob6UcYoDD601pZbuAfJxgvYc3ASdQ?usp=sharing
 
-# Starter Code 
-Code for multimodal baselines HOLE, LXMERT, ViLBERT, VLBERT, VisualBERT and DQA-Net is available at
-https://github.com/shailaja183/vlqa/baselines
-
 # Paper and Supplementary Material
 https://arxiv.org/pdf/2005.00330.pdf
 
