@@ -7,7 +7,7 @@ Visuo-Linguistic Question Answering (VLQA) is a dataset for joint reasoning over
 https://shailaja183.github.io/vlqa/
 
 # Download Dataset: 
-Train Set [xxx MB], Val Set [xxx MB] and Images [xxx GB]
+Train Set/Val Set/Test Set and Images
 
 # Starter Code: 
 Code for multimodal baselines HOLE, LXMERT, ViLBERT, VLBERT, VisualBERT and DQA-Net is available at
