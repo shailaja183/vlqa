@@ -5,7 +5,6 @@ Visuo-Linguistic Question Answering (VLQA), Findings of EMNLP 2020
 https://shailaja183.github.io/vlqa/
 
 # Download Dataset
-Train/Val/Test Set
 https://drive.google.com/drive/folders/163Tob6UcYoDD601pZbuAfJxgvYc3ASdQ?usp=sharing
 
 # Paper and Supplementary Material
