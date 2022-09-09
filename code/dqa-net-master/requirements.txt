@@ -1,0 +1,5 @@
+numpy
+progressbar2
+nltk
+tensorflow
+h5py

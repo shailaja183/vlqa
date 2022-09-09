@@ -35,45 +35,51 @@
       <div class="container">
           <div class="row">
             <div class="col-md-7 box ">
-              <h3>What is VLQA? </h3>
-              <p>VLQA is a dataset for joint reasoning over visuo-linguistic context. It consists of 9K image-passage-question-answers items with detailed annotations, which are meticulously crafted through combined automated and manual efforts. Questions in VLQA are designed to combine both visual and textual information, i.e. ignoring either of them would make the question unanswerable. Solving this dataset requires an AI model that can (i) understand diverse kinds of images; from simple daily-life scenes and standard charts to complex diagrams (ii) understand complex texts and relate it to given visual information (ii) perform a variety of reasoning tasks and derive inferences. </p>
-              <center>
-               <a href="https://arxiv.org/pdf/2005.00330.pdf" target="_blank"> <button class="button"> <i class="fa fa-newspaper-o" aria-hidden="true"></i> VLQA Paper (EMNLP'20 Findings)</button></a>
-              <hr>
-              <p>Browse examples from VLQA</p>
-              <!--https://shailaja183.github.io/vlqa/explorer-->
-                <a href="https://shailaja183.github.io/vlqa/dataset.html"><button class="button"> <i class="fa fa-eye" aria-hidden="true"></i> Explore VLQA Dataset</button></a>
-              <hr>
-                <p>For further details about VLQA dataset creation, annotations and dataset analysis please refer to the following document. </p>
-                <a href="https://arxiv.org/pdf/2005.00330.pdf" target="_blank"><button class="button"> <i class="fa fa-newspaper-o" aria-hidden="true"></i> Supplementary Material </button></a>
-              <hr>
-                <p>Download the VLQA dataset</p>
-                <a href="" download="train.json"><button class="button"><i class="fa  fa-download"></i> Download Training Set (xxx MB)</button></a>
-                <a href="" download="val.json"><button class="button"><i class="fa fa-download"></i> Download Validation Set (xxx MB)</button></a>
-                <a href="" download="images.zip"><button class="button"><i class="fa fa-download"></i> Download Images (xxx GB)</button></a>
-                <p> To preserve the integrity of the test results, we do not release the test set publicly. Submit your model as instructed below and we will test it for you. </p>
-              <hr>
-                <h3>Evaluation</h3>
-                <p>Code for baseline models used to report 
-                  results in our paper is available at following gitbub repository.
-                </p>
-                <a href="https://github.com/shailaja183/vlqa" target="_blank"><button class="button"><i class="fa fa-code" aria-hidden="true"></i> Code for Baseline Models </button></a>
-                <p>To evaluate your model, you need to use an evaluation script and a prediction file. 
-                  <br>
-                <a href="static/evaluate.py" download="evaluate.py"> <button class="button"><i class="fa fa-download"></i> Evaluation Script</button></a>
-                <a href="static/sample_predictions.json" download="sample_predictions.json"><button class="button"><i class="fa fa-download"></i> Sample Prediction File (Validation Set)</button></a>
-                <br>
-              Run the following command to print results for validation set; </p>
-                <code>python evaluate.py {path-to-prediction-file} {path-to-validation-set}</code>
+              <center> <h3>What is VLQA? </h3> </center>
+              <p>VLQA is a dataset for joint reasoning over visuo-linguistic context. It consists of 9K image-passage-question-answers items with detailed annotations, which are meticulously crafted through combined automated and manual efforts. Questions in VLQA are designed to combine both visual and textual information, i.e. ignoring either of them would make the question unanswerable. </p>
+
+              <p> Solving this dataset requires an AI model that can (i) understand diverse kinds of images; from simple daily-life scenes and standard charts to complex diagrams (ii) understand complex texts and relate it to given visual information (ii) perform a variety of reasoning tasks and derive inferences. </p>
                 
               <hr>
-                <h3>Submission</h3>
-                <p>Once you are satisfied with your model performance on the validation set, use the following tutorial to submit it for an official evaluation on the test set.</p>
-                <a href="https://worksheets.codalab.org/worksheets/0x31e65ec372c4499b9b53b78e5551c6eb" target="_blank"><button class="button"> <i class="fa fa-paper-plane" aria-hidden="true"></i> Submission Tutorial</button></a>
-                </center>
+
+              <center>
+              <h3> VLQA Paper </h3>
+              
+              
+               <a href="https://arxiv.org/pdf/2005.00330.pdf" target="_blank"> <button class="button"> <i class="fa fa-newspaper-o" aria-hidden="true"></i> PDF (EMNLP'20 Findings) </button></a>
+             </center>
+             <br>
+             <p>For more details about VLQA dataset creation, annotations and dataset analysis please refer to the supplementary material in the above file. </p>
+
+             <center>
               <hr>
-                <h3>Distribution and Usage</h3>
-                <p>VLQA is curated from multiple online resources (books, encyclopedias, web-crawls, existing datasets, standardized tests etc.). We provide web reference to all such resources used in images, passages and question-answers pairs in our dataset (originally curated content might be altered on case-by-case basis to well fit the purpose of the dataset). Creation of VLQA is purely research oriented and so does its distribution and future usage. VLQA is an ongoing effort and we expect the dataset to evolve. If you find our dataset or model helpful, please cite our paper :-)
+              <h3>Browse Examples</h3>
+              
+                <a href="https://shailaja183.github.io/vlqa/dataset.html"><button class="button"> <i class="fa fa-eye" aria-hidden="true"></i> Explore VLQA Dataset</button></a>
+              <hr>
+                <h3>Download Dataset</h3>
+                <a href="https://drive.google.com/drive/folders/163Tob6UcYoDD601pZbuAfJxgvYc3ASdQ?usp=sharing"><button class="button"><i class="fa  fa-download"></i> Train/Val/Test Set </button></a>
+              <hr>
+                <h3>Baselines Models</h3>
+                
+                <a href="https://github.com/shailaja183/vlqa" target="_blank"><button class="button"><i class="fa fa-code" aria-hidden="true"></i> Code for Baseline Models </button></a>
+              </center>
+              <br>
+                <p> <b>Note (As of September 2022): </b> All of our experimentation was done during early days of transformers. Many baselines we implemented are now part of HuggingFace and might be convenient to use. Check out <a href="https://huggingface.co/models" target="_blank">here</a>.</p>
+                <hr>
+                <center>
+                <h3>Leaderboard Submission</h3>
+              </center>
+                <p>If you would like your model to be part of our leaderboard,  create a prediction.csv file containing two columns- 'qid' and 'pred_answer' for all test set instances. Then send the prediction.csv file to <a href="mailto:ssampa17@asu.edu"> ssampa17@asu.edu</a> with the brief model description.</p>
+                
+              <hr>
+                <center><h3>Distribution and Usage</h3></center>
+                <p>VLQA is curated from multiple online resources (books, encyclopedias, web-crawls, existing datasets, standardized tests etc.). We provide web reference to all such resources used in images, passages and question-answers pairs in our dataset (originally curated content might be altered on case-by-case basis to well fit the purpose of the dataset). </p>
+
+
+                <p> 
+            Creation of VLQA is purely research oriented and so does its distribution and future usage. VLQA is an ongoing effort and we expect the dataset to evolve. If you find our dataset or model helpful, please cite our paper :-)
+                  <br><br>
                 <h4>Citation:</h4>
                 <code>
                   @misc{sampat2020visuo-linguistic,
@@ -94,8 +100,7 @@
                 </code>
                  </p> 
               <hr>   
-                <h3>More Questions?</h3>
-                <p>Contact Shailaja Sampat at <a href="mailto:ssampa17@asu.edu"> ssampa17@asu.edu</a></p>
+                
               </div>
               <div class="col-md-5 box">
                 <div id="container" style="width: 100%"></div>
