@@ -1,13 +1,11 @@
 # VLQA
-Website, Code and Data for Visuo-Linguistic Question Answering (VLQA), Findings of EMNLP 2020
-
-Visuo-Linguistic Question Answering (VLQA) is a dataset for joint reasoning over visuo-linguistic context.
+Visuo-Linguistic Question Answering (VLQA), Findings of EMNLP 2020
 
 # Website
 https://shailaja183.github.io/vlqa/
 
 # Download Dataset
-Train Set/Val Set/Test Set and Images
+Train/Val/Test Set
 https://drive.google.com/drive/folders/163Tob6UcYoDD601pZbuAfJxgvYc3ASdQ?usp=sharing
 
 # Paper and Supplementary Material
